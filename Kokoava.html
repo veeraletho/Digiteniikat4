@@ -82,10 +82,10 @@
         fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Voi katsoa JSON-datan rakenteen konsolista
+            console.log(data);
 
             // Käsitellään JSON-data
-            let result="<p>Samasta osoitteesta löydät myös:</p>" ;
+            let result = "<p>Samasta osoitteesta löydät myös:</p>" ;
             data.forEach(location => {
                 result += `
                     <p>
