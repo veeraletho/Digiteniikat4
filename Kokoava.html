@@ -76,13 +76,12 @@
       </div>
     </div>
  
-      <h4>OpenStreetMap JSON-haku</h4>
-      <p>Tässä voisi näyttää esim. toimiston sijainnin</p>
+      <h4>Toimistoni sijainti:</h4>
       <div id="result"></div>
   
       <script>
         // Haetaan sijaintitiedot Nominatim-palvelusta
-        fetch('https://nominatim.openstreetmap.org/search?q=Helsinki&format=json')
+        fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
         .then(response => response.json())
         .then(data => {
             console.log(data); // Voi katsoa JSON-datan rakenteen konsolista
