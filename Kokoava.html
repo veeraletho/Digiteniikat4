@@ -75,8 +75,7 @@
       </div>
     </div>
  
-      <h4 style=text-padding:50px>Toimistoni löydät osoitteesta Kaivokatu 2, Helsinki<br></h4>
-      <p>Samasta osoitteesta löydät myös:</p>
+      <h4 style=text-padding:50px>Toimistoni löydät osoitteesta Kaivokatu 2, Helsinki<br></h4
       <div id="result"></div>
   
       <script>
@@ -87,7 +86,7 @@
             console.log(data); // Voi katsoa JSON-datan rakenteen konsolista
 
             // Käsitellään JSON-data
-            let result;
+            let result= <p>Samasta osoitteesta löydät myös:</p> ;
             data.forEach(location => {
                 result += `
                     <p>
