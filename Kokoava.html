@@ -78,33 +78,32 @@
       <div id="result"></div>
   
       <script>
-        // Haetaan sijaintitiedot Nominatim-palvelusta
-        fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-
-            // Käsitellään JSON-data
-            let result = "<p>Samasta osoitteesta löydät myös:</p>" ;
-            data.forEach(location => {
-                result += `
-                    <p>
-                        Osoite: ${location.display_name} <br>
-                        Leveysaste: ${location.lat} <br>
-                        Pituusaste: ${location.lon}
-                    </p>
-                `;
-            });
-
-            // Näytetään tiedot sivulla
-            document.getElementById("result").innerHTML = result;
-        })
-        .catch(error => {
-            console.error('Virhe haussa:', error);
-            document.getElementById("result").innerHTML = "<p>Virhe tietojen haussa.</p>";
-        });
-    </script>
-
+         // Haetaan sijaintitiedot Nominatim-palvelusta
+         fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
+         .then(response => response.json())
+         .then(data => {
+             console.log(data);
+      
+             // Käsitellään JSON-data
+             let result = "<p>Samasta osoitteesta löydät myös:</p>";
+             data.forEach(location => {
+                 result += `
+                     <p>
+                         Osoite: ${location.display_name} <br>
+                         Leveysaste: ${location.lat} <br>
+                         Pituusaste: ${location.lon}
+                     </p>
+                 `;
+             });
+      
+             // Näytetään tiedot sivulla
+             document.getElementById("result").innerHTML = result;
+         })
+         .catch(error => {
+             console.error('Virhe haussa:', error);
+             document.getElementById("result").innerHTML = "<p>Virhe tietojen haussa.</p>";
+         });
+      </script>
 
 
 </body>
