@@ -14,106 +14,74 @@
   </div>
 </head>
 <body>
-
-
-<nav class="navbar navbar-expand-sm">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active text-white" href="#About me">Etusivu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="Myworks.html">My works</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#Contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4" id="About me">
-      <h3>About Me</h3>
-      <div class="col-md-4">
-        <img src="Veera.jpg" class="img-fluid d-block w-100" alt="Picture of Veera">
-      </div>
-      <h4 class="mt-4 text-success">quick links</h4>
-      <ul class="nav nav-pills flex-column">
+  
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-success" href="Myworks.html">My works</a>
+          <a class="nav-link active text-white" href="#About me">Etusivu</a>
         </li>
-        <li class="nav-items">
-          <a class="nav-link text-success" href="#Contact">Contact</a>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="Myworks.html">My works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#Contact">Contact</a>
         </li>
       </ul>
-      <hr class="d-sm-none">
     </div>
-
-    <div class="col-sm-8">
-        <div class="nav-item">
-          <div class="card" style="width:500px">
-            <img class="card-img-top" src="Viuhka.JPG" class="img-fluid d-block w-100" alt="Picture of feathers">
-            <div class="card-img-overlay">
-              <h4 class="card-title text-white">Photography</h4>
-              <a href="Myworks.html" class="btn btn-success">See some of my work</a>
-            </div>
-          </div>
-      <p>Some text..</p>
+  </nav>
+  
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-4" id="About me">
+        <h3>About Me</h3>
+        <div class="col-md-4">
+          <img src="Veera.jpg" class="img-fluid d-block w-100" alt="Picture of Veera">
+        </div>
+        <h4 class="mt-4 text-success">Quick Links</h4>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-success" href="Myworks.html">My works</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav-link text-success" href="#Contact">Contact</a>
+          </li>
+        </ul>
+        <hr class="d-sm-none">
       </div>
     </div>
-
-    <h4 style="padding:50px;">Toimistoni löydät osoitteesta Kaivokatu 2, Helsinki<br></h4
-    <div>
-      <div id="result"></div>
-    
-      <script>
-          // Haetaan sijaintitiedot Nominatim-palvelusta
-          fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
-          .then(response => response.json())
-          .then(data => {
-              console.log(data);
-        
-             // Käsitellään JSON-data
-             let result = <h5>"Samasta osoitteesta löydät myös:"</h5>;
-             data.forEach(location => {
-                  result += `
-                      <p>
-                          Osoite: ${location.display_name} <br>
-                          Leveysaste: ${location.lat} <br>
-                          Pituusaste: ${location.lon}
-                      </p>
-                  `;
-              });
-        
-              // Näytetään tiedot sivulla
-              document.getElementById("result").innerHTML = result;
-          })
-          .catch(error => {
-              console.error('Virhe haussa:', error);
-             document.getElementById("result").innerHTML = "<p>Virhe tietojen haussa.</p>";
-          });
-      </script>
+  </div>
+  
+  <div class="col-sm-8">
+      <div class="nav-item">
+        <div class="card" style="width:500px">
+          <img class="card-img-top" src="Viuhka.JPG" class="img-fluid d-block w-100" alt="Picture of feathers">
+          <div class="card-img-overlay">
+            <h4 class="card-title text-white">Photography</h4>
+            <a href="Myworks.html" class="btn btn-success">See some of my work</a>
+          </div>
+        </div>
+    <p>Some text..</p>
     </div>
-
-
-    <h4 style="padding:50px;">Toimistoni löydät osoitteesta Kaivokatu 2, Helsinki<br></h4>
+  </div>
+  
+  <h4 style="padding:50px;">Toimistoni löydät osoitteesta Kaivokatu 2, Helsinki<br></h4
+  <div>
     <div id="result"></div>
-
+      
     <script>
-      // Haetaan sijaintitiedot Nominatim-palvelusta
-      fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
-      .then(response => response.json())
-      .then(data => {
+    // Haetaan sijaintitiedot Nominatim-palvelusta
+    fetch('https://nominatim.openstreetmap.org/search?q=2+Kaivokatu,+Helsinki&format=json&addressdetails=1')
+    .then(response => response.json())
+    .then(data => {
           console.log(data);
-
+          
           // Käsitellään JSON-data
-          let result = "<p>Samasta osoitteesta löydät myös:</p>";
+          let result = <h5>"Samasta osoitteesta löydät myös:"</h5>;
           data.forEach(location => {
               result += `
                   <p>
@@ -123,17 +91,16 @@
                   </p>
               `;
           });
-
+          
           // Näytetään tiedot sivulla
           document.getElementById("result").innerHTML = result;
       })
-      .catch(error => {
+        .catch(error => {
           console.error('Virhe haussa:', error);
           document.getElementById("result").innerHTML = "<p>Virhe tietojen haussa.</p>";
       });
     </script>
-
-</div>
+  </div>
 </body>
 <footer>
   <div class="mt-5 p-4 bg-dark text-white text-center justify-content-center">
