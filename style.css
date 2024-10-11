@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Painikkeet ja linkit */
 .nav-pills .nav-link.active {
-  background-color: #d2b48c; 
+  background-color: #d6cbbc; 
 }
 
 .nav-pills .nav-link {
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .nav-link:hover {
-  background-color: #dbcfbf; 
+  background-color: #c9a06c; 
   color: white;
 }
 
